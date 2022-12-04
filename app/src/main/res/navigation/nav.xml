@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/mainPage">
+
+    <fragment
+        android:id="@+id/detailedCharData"
+        android:name="com.example.androidtask2.DetailedCharData"
+        android:label="fragment_detailed_char_data"
+        tools:layout="@layout/fragment_detailed_char_data" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="description"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="image"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_detailedCharData_to_mainPage"
+            app:destination="@id/mainPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainPage"
+        android:name="com.example.androidtask2.MainPage"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page" >
+        <action
+            android:id="@+id/action_mainPage_to_detailedCharData"
+            app:destination="@id/detailedCharData" />
+    </fragment>
+</navigation>
